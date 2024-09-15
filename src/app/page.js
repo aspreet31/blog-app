@@ -10,7 +10,7 @@ export default async function Page() {
   </h1>
   <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start ">
   <div className="flex flex-col gap-4 items-center sm:flex-row sm:gap-8">
-    {posts.length === 0 ? (
+    {!posts ? (
       <p className="text-center">No posts available</p>
     ) : (
       <div className="w-full max-w-7xl h-[32rem]  p-6 sm:p-8 lg:p-10">
