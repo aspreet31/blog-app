@@ -5,7 +5,7 @@ const expressApp = require('./api/index');
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = next({ dev });
 const handle = nextApp.getRequestHandler();
-
+const port = process.env.PORT || 4000;
 nextApp.prepare().then(() => {
   const server = expressApp;
 
@@ -14,8 +14,8 @@ nextApp.prepare().then(() => {
     return handle(req, res);
   });
 
-  server.listen(3000, (err) => {
+  server.listen(port, (err) => {
     if (err) throw err;
-    console.log('> Ready on http://localhost:3000');
+    console.log(`Server is running on http://localhost:${port}`);
   });
 });
